@@ -1,9 +1,6 @@
 Product.destroy_all
 Review.destroy_all
 
-
-
-
 50.times do |index|
   product = Product.create!(name: Faker::Food.ingredient, cost: Faker::Commerce.price, country_of_origin: Faker::TvShows::GameOfThrones.city)
 end  
