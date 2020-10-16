@@ -4,6 +4,14 @@ class ProductsController < ApplicationController
     @products = Product.all
     @new_products = Product.most_recent
     @most_reviewed_product = Product.most_reviewed
+    if params[:name_search]
+      if params[:name_search] != ""
+        @search_results = Product.search(params[:name_search])
+      else
+        flash[:notice] = "Please enter a search query"
+        @search_results = false
+      end
+    end
     render :index
   end
 

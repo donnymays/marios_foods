@@ -1,7 +1,7 @@
 
 <h1>Products</h1>
 <% if @new_products.any?%>
-  <h2> Check out what's new: <h2>
+  <h2> Check out what's new: </h2>
   <ul>
     <% @new_products.each do |product| %>
       <li><%= link_to product.name, product_path(product) %></li>
@@ -10,10 +10,34 @@
 <% end %>
 
 <% if Product.most_reviewed %>
-  <h3> Check out our <em>Most Reviewed Product: </em> <%= link_to Product.most_reviewed.name, product_path(Product.most_reviewed)  %></h3>
+  <h3> Check out our <em>Most Reviewed Product: </em></h3>
+  <ul>
+    <li><%= link_to Product.most_reviewed.name, product_path(Product.most_reviewed)%></li>
+  </ul>
 <% end %>
 
-<div class="product_list">
+<hr>
+
+<p>Search for a product:</p>
+<%= form_tag(products_path, method: :get) do %>
+  <%= text_field_tag(:name_search, params[:name_search]) %>
+  <%= submit_tag ("Search") %>
+<% end %>
+
+<% if @search_results %>
+  <% if @search_results.any? %>
+    <h4>Here are your products:</h4>
+    <ul>
+      <% @search_results.each do |result| %>
+        <li><%= result.name %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No results for this query</p>
+  <% end %>
+<% end %>
+
+<div id="product_list">
   <% if @products.any? %>
     <ul>
       <% @products.each do |product| %>

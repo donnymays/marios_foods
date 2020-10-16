@@ -10,7 +10,6 @@ class Product < ApplicationRecord
 
   scope :search, -> (name_parameter) { where("LOWER(name) like ?", "%#{name_parameter.downcase}%") }
 
-  
   private
     def titleize_product
       self.name = self.name.titleize
