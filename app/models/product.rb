@@ -6,8 +6,20 @@ class Product < ApplicationRecord
 
   before_save(:titleize_product)
 
+  scope :search, -> (name_parameter) { where("LOWER(name) like ?", "%#{name_parameter.downcase}%") }
+
   private
-    def titleize_product
-      self.name = self.name.titleize
+  def titleize_product
+    self.name = self.name.titleize
+  end
+
+  def most_reviewed 
+    @products = Product.all
+    review_arr = []
+    @products.each do |product|
+      review_arr << product.reviews
     end
+   Product.find(review_arr.max_by(&:length)[0].product_id)
+  end
 end
+

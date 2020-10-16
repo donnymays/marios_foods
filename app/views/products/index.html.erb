@@ -1,6 +1,11 @@
 
 <h1>Products</h1>
 
+<h2>Most Reviewed Product:</h2>
+<% if Product.most_reviewed.any? %>
+<h3> Check out the <em>Most Reviewed Product: </em> <%= link_to Product.most_reviewed.name, product_path(Product.most_reviewed)  %></h3>
+
+<% end %>
 <% if @products.any? %>
   <ul>
     <% @products.each do |product| %>
