@@ -21,7 +21,7 @@ class Product < ApplicationRecord
       @products.each do |product|
         review_arr << product.reviews
       end
-    Product.find(review_arr.max_by(&:length)[0].product_id)
+      Product.find(review_arr.max_by(&:length)[0].product_id)
     end
 end
 

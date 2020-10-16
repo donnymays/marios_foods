@@ -10,15 +10,14 @@
   </ul>
 <% end %>
 
-<% if Product.most_reviewed %>
+<% if @reviewed_product %>
   <h3> Check out our <em>Most Reviewed Product: </em></h3>
   <ul>
-    <li><%= link_to Product.most_reviewed.name, product_path(Product.most_reviewed)%></li>
+    <li><%= link_to @reviewed_product.name, product_path(@reviewed_product)  %></li>
   </ul>
 <% end %>
 
 <hr>
-
 
 <p>Search for a product:</p>
 <%= form_tag(products_path, method: :get) do %>
