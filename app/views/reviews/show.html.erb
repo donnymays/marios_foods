@@ -1,6 +1,11 @@
-<h1>Review: <%= @review.author %></h1>
-<h2>Product: <%= @product.name %></h2>
-
+<h1>Review by: <%= @review.author %></h1>
+<hr>
+<h2>Product: <%= @product.name %></h2><p>reviewed on: <%= @review.created_at %>
+<p><em><%= @review.content %></em></p>
+<br>
+<br>
+<hr>
+<br>
 
 <p><%= link_to "Edit review", edit_product_review_path(@product, @review) %></p>
 <p><%= link_to "Delete review", product_review_path(@product, @review),

@@ -1,3 +1,32 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+h1 {
+  font-family: 'Pacifico';
+  text-align: center;
+  color: #eebb4d;
+  font-size: 72px;
+  padding-bottom: 25px;
+  margin: 30px;
+}
+
+h2, h3, h4, p, label {
+  font-family: 'Oswald';
+  color: #96bb7c;
+}
+
+a {
+ font-family: 'Oswald';
+ color: #eebb4d;
+}
+
+body {
+  background-color: #e3dfc8;
+}
+
+hr {
+ width: 4%;
+ border: dotted #f5f1da 6px;
+ border-bottom: none;
+ margin: 20px auto;
+}

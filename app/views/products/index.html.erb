@@ -1,5 +1,6 @@
 
 <h1>Products</h1>
+<hr>
 <% if @new_products.any?%>
   <h2> Check out what's new: </h2>
   <ul>
@@ -18,11 +19,14 @@
 
 <hr>
 
+
 <p>Search for a product:</p>
 <%= form_tag(products_path, method: :get) do %>
   <%= text_field_tag(:name_search, params[:name_search]) %>
   <%= submit_tag ("Search") %>
 <% end %>
+<br>
+<br>
 
 <% if @search_results %>
   <% if @search_results.any? %>
@@ -31,6 +35,7 @@
       <% @search_results.each do |result| %>
         <li><%= link_to result.name,  product_path(result)%></li>
       <% end %>
+      <hr>
     </ul>
   <% else %>
     <p>No results for this query</p>
