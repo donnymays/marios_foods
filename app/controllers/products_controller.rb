@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @new_products = Product.most_recent
-    @most_reviewed_product = Product.most_reviewed
     if params[:name_search]
       if params[:name_search] != ""
         @search_results = Product.search(params[:name_search])
@@ -23,7 +22,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(products_params)
     if @product.save
-      redirect_to products_path
+      redirect_to product_path(@product)
       flash[:notice] = "Product successfully added!"
     else
       render :new
