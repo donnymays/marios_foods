@@ -13,7 +13,7 @@ class Product < ApplicationRecord
     self.name = self.name.titleize
   end
 
-  def most_reviewed 
+  def self.most_reviewed 
     @products = Product.all
     review_arr = []
     @products.each do |product|
