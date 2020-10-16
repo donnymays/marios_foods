@@ -29,7 +29,7 @@
     <h4>Here are your products:</h4>
     <ul>
       <% @search_results.each do |result| %>
-        <li><%= result.name %></li>
+        <li><%= link_to result.name,  product_path(result)%></li>
       <% end %>
     </ul>
   <% else %>
