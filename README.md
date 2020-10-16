@@ -11,7 +11,7 @@ _16 October 2020_
 ## Setup/Installation Requirements
 
 - In terminal/command line, navigate into the directory where you would like to create a new Rails project.
-- Clone this project using the 'git clone ' command in terminal/command line while in the desired directory.
+- Clone this project using the 'git clone https://github.com/donnymays/marios_foods.git' command in terminal/command line while in the desired directory.
 - Navigate to the cloned directory and run 'bundle' in your command line to download gem dependencies.
 - Run rake db:setup to create and populate the database.
 - To view in a browser, in the terminal run 'rails s' 
