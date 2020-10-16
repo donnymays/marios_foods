@@ -7,18 +7,13 @@
       <li><%= link_to product.name, product_path(product) %></li>
     <% end %>
   </ul>
-    <% else %>
-      <p>There are no products yet.</p>
-  <% end %>
-
-
-
+<% end %>
 
 <% if Product.most_reviewed %>
   <h3> Check out our <em>Most Reviewed Product: </em> <%= link_to Product.most_reviewed.name, product_path(Product.most_reviewed)  %></h3>
-
 <% end %>
 
+<div class="product_list">
   <% if @products.any? %>
     <ul>
       <% @products.each do |product| %>
@@ -27,7 +22,8 @@
     </ul>
   <% else %>
     <p>There are no products yet.</p>
-<% end %>
+  <% end %>
+</div>
 
 
 <p><%= link_to "Create new product", new_product_path %></p>

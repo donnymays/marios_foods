@@ -9,5 +9,5 @@ end
 
 250.times do |index|
   product_random_id = Product.all.ids.sample
-  review = Review.create!(author: Faker::Movies::Lebowski.character, content: Faker::Lorem.characters(number: 150), rating: rand(6), product_id: product_random_id)
+  review = Review.create!(author: Faker::Movies::Lebowski.character, content: Faker::Hipster.paragraph_by_chars(characters: 150, supplemental: false), rating: rand(6), product_id: product_random_id)
 end
