@@ -9,7 +9,7 @@ describe "the update a product process" do
     fill_in 'Cost', :with => '3'
     fill_in 'Country of origin', :with => 'Canada'
     click_on 'Create Product'
-    click_on 'Kangaroo'
+    # click_on 'Kangaroo'
     click_on 'Edit'
     fill_in 'Name', :with => 'Venison'
     click_on 'Update Product'

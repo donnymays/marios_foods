@@ -10,18 +10,17 @@ class Product < ApplicationRecord
 
   scope :search, -> (name_parameter) { where("LOWER(name) like ?", "%#{name_parameter.downcase}%") }
 
+  scope :most_reviewed, -> {(
+    select("products.id, products.name, count(reviews.id) as reviews_count")
+    .joins(:reviews)
+    .group("products.id")
+    .order("reviews_count DESC")
+    .limit(1)
+  )}
+
   private
     def titleize_product
       self.name = self.name.titleize
-    end
-
-    def self.most_reviewed 
-      @products = Product.all
-      review_arr = []
-      @products.each do |product|
-        review_arr << product.reviews
-      end
-      Product.find(review_arr.max_by(&:length)[0].product_id)
     end
 end
 

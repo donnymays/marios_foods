@@ -10,12 +10,13 @@
   </ul>
 <% end %>
 
-<% if @reviewed_product %>
-  <h3> Check out our <em>Most Reviewed Product: </em></h3>
-  <ul>
-    <li><%= link_to @reviewed_product.name, product_path(@reviewed_product)  %></li>
-  </ul>
-<% end %>
+  <% if @reviewed_product.any? %>
+    <h3> Check out our <em>Most Reviewed Product: </em></h3>
+    <ul>
+      <li><%= link_to @reviewed_product.first.name, product_path(@reviewed_product.first)  %></li>
+    </ul>
+  <% end %>
+
 
 <hr>
 

@@ -9,6 +9,7 @@ describe "the add a review process" do
     fill_in 'Country of origin', :with => 'Canada'
     click_on 'Create Product'
     click_on 'Add a review'
+    save_and_open_page
     fill_in 'Your name', :with => 'Jaques'
     fill_in 'Content', :with => 'A statement that is at least 50 characters long, something like this should do it.'
     fill_in 'Rating', :with => '4'
