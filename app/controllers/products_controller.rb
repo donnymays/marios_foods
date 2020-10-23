@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    @products = Product.order(:name).page(params[:page])
     @new_products = Product.most_recent
     @reviewed_product = Product.most_reviewed
     if params[:name_search]

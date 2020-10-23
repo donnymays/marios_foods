@@ -1,25 +1,6 @@
 
 <h1>Products</h1>
 <hr>
-<% if @new_products.any?%>
-  <h2> Check out what's new: </h2>
-  <ul>
-    <% @new_products.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-  <% if @reviewed_product.any? %>
-    <h3> Check out our <em>Most Reviewed Product: </em></h3>
-    <ul>
-      <li><%= link_to @reviewed_product.first.name, product_path(@reviewed_product.first)  %></li>
-    </ul>
-  <% end %>
-
-
-<hr>
-
 <p>Search for a product:</p>
 <%= form_tag(products_path, method: :get) do %>
   <%= text_field_tag(:name_search, params[:name_search]) %>
@@ -49,6 +30,7 @@
         <li><%= link_to product.name, product_path(product) %></li>
       <% end %>
     </ul>
+    <%= paginate @products %>
   <% else %>
     <p>There are no products yet.</p>
   <% end %>

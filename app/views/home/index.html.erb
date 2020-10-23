@@ -1,9 +1,11 @@
 <h1> Welcome to Mario's Specialty Foods Store! </h1>
 
 <%= link_to "Sign Up!", new_user_registration_path %>
+<br>
 <%= link_to "Sign In!", new_user_session_path%>
+<br>
+<%= link_to "Check out our Inventory!", products_path%>
 
-<h1>Products</h1>
 <hr>
 <% if @new_products.any?%>
   <h2> Check out what's new: </h2>
