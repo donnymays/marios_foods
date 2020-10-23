@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "the add a product process" do
   it "adds a new product" do
-   @user = User.create!(:email => 'test@example.com', :password => 'f4k3p455w0rd', :password_confirmation => 'f4k3p455w0rd',admin: true)
+   @user = User.create!(:email => 'test@example.com', :password => 'f4k3p455w0rd', :password_confirmation => 'f4k3p455w0rd', admin: true)
     visit root_path
     click_link 'Sign In!'
     fill_in 'Email', :with => 'test@example.com'
