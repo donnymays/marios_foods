@@ -2,16 +2,6 @@ class ProductsController < ApplicationController
   load_and_authorize_resource
   def index
     @products = Product.order(:name).page(params[:page])
-    @new_products = Product.most_recent
-    @reviewed_product = Product.most_reviewed
-    if params[:name_search]
-      if params[:name_search] != ""
-        @search_results = Product.search(params[:name_search])
-      else
-        flash[:notice] = "Please enter a search query"
-        @search_results = false
-      end
-    end
     render :index
   end
 
