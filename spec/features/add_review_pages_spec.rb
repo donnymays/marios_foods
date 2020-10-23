@@ -2,34 +2,17 @@ require 'rails_helper'
 
 describe "the add a review process" do
   it "adds a new review" do
-    visit products_path
-    click_link 'Create new product'
-    fill_in 'Name', :with => 'Kangaroo'
-    fill_in 'Cost', :with => '3'
-    fill_in 'Country of origin', :with => 'Canada'
-    click_on 'Create Product'
-    click_on 'Add a review'
-    save_and_open_page
-    fill_in 'Name', :with => 'Jaques'
-    fill_in 'Content', :with => 'A statement that is at least 50 characters long, something like this should do it.'
-    fill_in 'Rating', :with => '4'
-    click_on 'Create Review'
-    expect(page).to have_content 'A statement that is at leas'
-  end
-  
-  it "gives an error when content is too short" do
-    visit products_path
-    click_link 'Create new product'
-    fill_in 'Name', :with => 'Kangaroo'
-    fill_in 'Cost', :with => '3'
-    fill_in 'Country of origin', :with => 'Canada'
-    click_on 'Create Product'
-    click_on 'Add a review'
-    fill_in 'Name', :with => 'Jaques'
-    fill_in 'Content', :with => 'A statement'
-    fill_in 'Rating', :with => '4'
-    click_on 'Create Review'
-    expect(page).to have_content 'Content is too short'
+    @user = User.create!(:email => 'test@example.com', :password => 'f4k3p455w0rd', :password_confirmation => 'f4k3p455w0rd', admin: true)
+    @product = Product.create!(name: "Arugula", cost: 0.5594e2, country_of_origin: "King's Landing")
+    @review = Review.create!(author: "Donny", content: "Tilde plaid vinegar venmo 3 wolf moon locavore occ...", rating: 2, product_id: @product.id)
+    visit root_path
+    click_link 'Sign In!'
+    fill_in 'Email', :with => 'test@example.com'
+    fill_in 'Password', :with => 'f4k3p455w0rd'
+    click_button 'Log in'
+    click_link 'Check out our Inventory!'
+    click_link 'Arugula'
+    expect(page).to have_content 'vinegar venmo'
   end
 end
 

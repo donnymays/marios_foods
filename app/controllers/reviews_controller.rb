@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :except => :create
   def new 
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new
