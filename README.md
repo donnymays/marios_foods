@@ -1,8 +1,8 @@
 # README
 
-# _Volunteer Tracker_
+# _Mario's Foods_
 
-_16 October 2020_
+_16 October 2020 last updated 23 October 2020_ 
 
 #### _Application for a hypothetical food store to list their products and reviews of such products.  A practice in setting up a one to many relationship with Rails_
 
@@ -14,11 +14,13 @@ _16 October 2020_
 - Clone this project using the 'git clone https://github.com/donnymays/marios_foods.git' command in terminal/command line while in the desired directory.
 - Navigate to the cloned directory and run 'bundle' in your command line to download gem dependencies.
 - Run rake db:setup to create and populate the database.
-- To view in a browser, in the terminal run 'rails s' 
+- To view in a browser, in the terminal run 'rails s'
+- To view app as a user, email: 'user@user.com' password: 'user123'
+- To view app as an admin, email: 'admin@admin.com' password: 'admin123'
 - Open a browser and type the localhost port for the rails server (ex:localhost:3000)
 
 ## Description
-_This is a project for Week 4 of the Ruby block of Epicodus.  Prompt can be seen below._
+_This is a project for Week 5 of the Ruby block of Epicodus.  Prompt can be seen below._
 
 _The original instructions for the assignment include:_
 You've in the running for a freelance development job as the developer for Mario's Speciality Food Products (or another fictional company of your choosing). First, Mario wants to make sure you're the right person for the job. He's asked you for an MVP and wants it by 5:00 tonight. The stakes are higher than usual, since Mario's old site had thousands of unique visitors each day. If you can get the job, this is a great way to increase your profile as a developer.
@@ -50,11 +52,24 @@ All products are automatically titleized (first letter of each word capitalized)
 Seeding
 Your project should include seed data for 50 products and 250 reviews. Use Faker with a loop to seed the database.
 
+Part 2
+This is the second week of a two-week project. Mario was so impressed by your MVP that he wants you to continue developing his new site. However, he's concerned about the fact that anyone viewing his site has full access to CRUD functionality. He has given you a list of user stories and has asked you to update his site to take them into account. Today's focus is on adding authentication to ease Mario's worries.
+
+You will be adding authentication to expand your project from last week. Feel free to use the same exact project or rebuild it from scratch if you feel inclined. You may use either BCrypt or Devise to add authentication, whichever you prefer. Your project should have full functionality by the time you submit it today, including all of last week's objectives.
+
+Here are the user stories Mario has provided you:
+
+As an admin, I should be able to log in and log out of the application.
+As an admin, I should be able to add, update and delete products.
+As an admin, I should be able to add reviews.
+As an admin, I want to ensure that other users don't have access to CRUD functionality.
+As a user, I want to be able to create an account and add a review to a product. (A product can have many comments.) This is the only CRUD functionality a user can have.
+
 
 ## Specifications
 | Spec     | Story |
 | -------- | -------- |
-| 1 | Users should be able to add, update and delete new products. |
+| 1 | Admins should be able to add, update and delete new products. |
 | 2 | Users should be able to click an individual product to see its detail page.|
 | 3 | Users should be able to add a review to a product.|
 | 4 | All fields should be filled out, including rating. |
@@ -72,9 +87,7 @@ _There are no known bugs at this time_
 * HTML
 * CSS
 * Bootstap CSS framework
-* Postgres
-* psql
-* Gems: rspec, pry, sinatra, capybara, faker
+* Gems: rspec, pry, cancancan, capybara, faker, devise
 
 ### License
 Copyright (c) 2020 **_Donny Mays_**
