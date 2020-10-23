@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+skip_before_action :authenticate_user!, :only => [:index, :show]
   def index
     @products = Product.order(:name).page(params[:page])
     @new_products = Product.most_recent

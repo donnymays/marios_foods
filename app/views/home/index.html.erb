@@ -4,7 +4,13 @@
 <br>
 <%= link_to "Sign In!", new_user_session_path%>
 <br>
-<%= link_to "Check out our Inventory!", products_path%>
+<% if current_user %>
+  <%= link_to "Sign Out!", destroy_user_session_path, :method => :delete %>
+  <br>
+<% end %>
+<%= link_to "Check out our Inventory!", products_path %>
+
+
 
 <hr>
 <% if @new_products.any?%>
