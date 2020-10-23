@@ -8,9 +8,9 @@ class UsersController < ApplicationController
   #   end
   # end
 
-  # private
-  #   def user_params
-  #     params.require(:user).permit(:admin, :email, :password, :password_confirmation)
-  #   end
+  private
+    def user_params
+      params.require(:user).permit(:admin, :email, :password, :password_confirmation)
+    end
   
 end

@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :except => :create
   def index
     @products = Product.order(:name).page(params[:page])
     render :index
