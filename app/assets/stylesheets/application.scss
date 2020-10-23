@@ -17,7 +17,6 @@ h2, h3, h4, p, label {
 
 a {
  font-family: 'Oswald';
- color: #eebb4d;
 }
 
 body {
@@ -30,4 +29,18 @@ hr {
  border: dotted #f5f1da 6px;
  border-bottom: none;
  margin: 20px auto;
+}
+
+.nav-bar-links {
+  text-align: right;
+  padding: 10px;
+}
+
+.navbar-brand {
+  color: #96bb7c;
+  font-family: 'Pacifico';
+}
+
+.nav-item {
+  color: #f5f1da;
 }
