@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
-  skip_before_action :authenticate_user!, :only => [:show, :new]
-  before_action :authenticate_admin!
+  load_and_authorize_resource
   def new 
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new

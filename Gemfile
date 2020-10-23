@@ -42,6 +42,7 @@ gem 'sassc-rails', '>= 2.1.0'
 gem 'devise'
 gem 'kaminari'
 gem "cancancan", "~> 3.1"
+gem 'warden'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

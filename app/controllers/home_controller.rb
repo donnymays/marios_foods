@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  skip_before_action :authenticate_user!, :authenticate_admin!
+  skip_before_action :authenticate_user!
   def index
     @products = Product.all
     @new_products = Product.most_recent

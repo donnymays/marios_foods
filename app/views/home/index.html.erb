@@ -1,16 +1,16 @@
 <h1> Welcome to Mario's Specialty Foods Store! </h1>
 
-<%= link_to "Sign Up!", new_user_registration_path %>
-<br>
-<%= link_to "Sign In!", new_user_session_path%>
-<br>
-<% if current_user %>
+<% if !current_user %>
+  <%= link_to "Sign Up!", new_user_registration_path %>
+  <br>
+  <%= link_to "Sign In!", new_user_session_path%>
+  <br>
+<% else %>
   <%= link_to "Sign Out!", destroy_user_session_path, :method => :delete %>
   <br>
 <% end %>
+
 <%= link_to "Check out our Inventory!", products_path %>
-
-
 
 <hr>
 <% if @new_products.any?%>
