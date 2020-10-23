@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def authenticate_admin!
     current_user && current_user.admin
   end 
-
+  
   protected
 
   def configure_permitted_parameters

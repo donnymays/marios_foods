@@ -36,5 +36,6 @@
   <% end %>
 </div>
 
-
-<p><%= link_to "Create new product", new_product_path %></p>
+<% if is_admin? %>
+  <p><%= link_to "Create new product", new_product_path %></p>
+<% end %>
