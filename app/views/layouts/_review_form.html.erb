@@ -1,7 +1,7 @@
 <%= render "layouts/errors", :object => @review %>
 
 <%= form_for [@product, @review] do |f| %>
-  <%= f.label :"Your Name" %>
+  <%= f.label :name %>
   <%= f.text_field :author %>
   <%= f.label :content %>
   <%= f.text_area :content, placeholder: "50-250 words please" %>

@@ -1,0 +1,22 @@
+<h1> Welcome to Mario's Specialty Foods Store! </h1>
+
+<%= link_to "Sign Up!", new_user_registration_path %>
+<%= link_to "Sign In!", new_user_session_path%>
+
+<h1>Products</h1>
+<hr>
+<% if @new_products.any?%>
+  <h2> Check out what's new: </h2>
+  <ul>
+    <% @new_products.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+  <% if @reviewed_product.any? %>
+    <h3> Check out our <em>Most Reviewed Product: </em></h3>
+    <ul>
+      <li><%= link_to @reviewed_product.first.name, product_path(@reviewed_product.first)  %></li>
+    </ul>
+  <% end %>

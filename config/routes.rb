@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'products#index'
+  devise_for :add_columns
+  devise_for :users
+  root to: 'home#index'
   resources :products do
     resources :reviews 
   end
