@@ -5,26 +5,23 @@
   <br>
   <%= link_to "Sign In!", new_user_session_path%>
   <br>
-<% else %>
-  <%= link_to "Sign Out!", destroy_user_session_path, :method => :delete %>
-  <br>
 <% end %>
-
-<%= link_to "Check out our Inventory!", products_path %>
-
-<hr>
-<% if @new_products.any?%>
-  <h2> Check out what's new: </h2>
-  <ul>
-    <% @new_products.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-  </ul>
-<% end %>
-
+<br>
+<div class="home">
+  <h2><%= link_to "Check out our Inventory!", products_path %></h2>
+  <hr>
+  <% if @new_products.any?%>
+    <h2> Check out what's new: </h2>
+    <ul>
+      <% @new_products.each do |product| %>
+        <li><%= link_to product.name, product_path(product) %></li>
+      <% end %>
+    </ul>
+  <% end %>
   <% if @reviewed_product.any? %>
     <h3> Check out our <em>Most Reviewed Product: </em></h3>
     <ul>
       <li><%= link_to @reviewed_product.first.name, product_path(@reviewed_product.first)  %></li>
     </ul>
   <% end %>
+</div>
